@@ -1,12 +1,12 @@
-import { ProsConsResponse } from "@interfaces/pros-cons.response";
+import { TranslateResponse } from "@interfaces/index";
 import { environment } from "environments/environment.development"
 
 
-export const prosConsDicusserUseCase = async ( prompt:string ) => {
+export const translateUseCase = async ( prompt:string, lang: string ) => {
 
   try {
 
-    const apiUrl: string = `${environment.backendApi}/pros-cons-discusser`;
+    const apiUrl: string = `${environment.backendApi}/translate`;
 
     const resp = await fetch(
       apiUrl,
@@ -15,13 +15,13 @@ export const prosConsDicusserUseCase = async ( prompt:string ) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ prompt, lang })
       }
     );
 
-    if ( !resp.ok ) throw new Error('No se pudo realizar la comparación');
+    if ( !resp.ok ) throw new Error('No se pudo realizar la traducción');
 
-    const data: ProsConsResponse = await resp.json();
+    const data: TranslateResponse = await resp.json();
 
     return {
       ok: true,
@@ -35,7 +35,7 @@ export const prosConsDicusserUseCase = async ( prompt:string ) => {
     return {
       ok: false,
       role: '',
-      content: 'No se pudo realizar la comparación'
+      content: 'No se pudo realizar la traducción'
     }
 
   }

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ChatMessageComponent, MessageEventWithFile, MessageEventWithSelect, MyMessageComponent, TextMessageBoxComponent, TypingLoaderComponent } from '@components/index';
+import { ChatMessageComponent, MessageEventWithFile, MessageEventWithSelect, MyMessageComponent, TextMessageBoxComponent, TextMessageBoxFileComponent, TypingLoaderComponent } from '@components/index';
 import { Message } from '@interfaces/message';
 import { OpenAiService } from 'app/presentation/services/openai.service';
 
@@ -14,6 +13,8 @@ import { OpenAiService } from 'app/presentation/services/openai.service';
     MyMessageComponent,
     TypingLoaderComponent,
     TextMessageBoxComponent,
+    //TextMessageBoxSelectComponent,
+    //TextMessageBoxFileComponent,
   ],
   templateUrl: './chatTemplate.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
