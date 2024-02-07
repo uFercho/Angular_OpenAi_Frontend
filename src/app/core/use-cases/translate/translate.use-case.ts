@@ -6,7 +6,7 @@ export const translateUseCase = async ( prompt:string, lang: string ) => {
 
   try {
 
-    const apiUrl: string = `${environment.backendApi}/translate`;
+    const apiUrl: string = `${environment.backendApi}/gpt/translate`;
 
     const resp = await fetch(
       apiUrl,

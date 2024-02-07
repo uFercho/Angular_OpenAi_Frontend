@@ -6,7 +6,7 @@ export const textToAudioUseCase = async ( prompt:string, voice: string ) => {
 
   try {
 
-    const apiUrl: string = `${environment.backendApi}/text-to-audio`;
+    const apiUrl: string = `${environment.backendApi}/gpt/text-to-audio`;
 
     const resp = await fetch(
       apiUrl,

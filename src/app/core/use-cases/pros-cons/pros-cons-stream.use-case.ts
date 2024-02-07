@@ -6,7 +6,7 @@ export async function* prosConsDiscusserStreamUseCase( prompt: string, abortSign
 
   try {
 
-    const apiUrl: string = `${environment.backendApi}/pros-cons-discusser-stream`;
+    const apiUrl: string = `${environment.backendApi}/gpt/pros-cons-discusser-stream`;
 
     const resp = await fetch(
       apiUrl,

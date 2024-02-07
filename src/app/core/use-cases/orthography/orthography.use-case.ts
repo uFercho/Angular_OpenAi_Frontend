@@ -6,7 +6,7 @@ export const orthographyUseCase = async ( prompt:string ) => {
 
   try {
 
-    const apiUrl: string = `${environment.backendApi}/orthography-check`;
+    const apiUrl: string = `${environment.backendApi}/gpt/orthography-check`;
 
     const resp = await fetch(
       apiUrl,

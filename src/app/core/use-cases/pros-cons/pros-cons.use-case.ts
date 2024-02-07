@@ -6,7 +6,7 @@ export const prosConsDicusserUseCase = async ( prompt:string ) => {
 
   try {
 
-    const apiUrl: string = `${environment.backendApi}/pros-cons-discusser`;
+    const apiUrl: string = `${environment.backendApi}/gpt/pros-cons-discusser`;
 
     const resp = await fetch(
       apiUrl,
